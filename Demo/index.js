@@ -1,8 +1,4 @@
-
-
-{
-  var a=5;
-  let b=10;
+function fuc(){
+  var a=1;
+  let a=2;
 }
-console.log(a);
-console.log(b);
