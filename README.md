@@ -101,7 +101,55 @@ var定义变量：可以先使用，后声明；而let定义变量：只可先�
 const命令用来声明常量，一旦声明，值就不能发生改变。后面的特性与let十分相识。 const 本质上是给变量提供的存储地址中值不变动，但是对于对象来说，对象的参数可发生改变。
 
 # 声明 变量的6种方法
-ES5中，声明变量只存在两种方式var和functon.
+ES5中，声明变量只存在两种方式var和functon.<br>
 在ES6中新增了四种声明方式，let、const、import、class.
 
+# 变量的解构赋值
 
+## 数组解构
+ES6 允许写成下面这样。
+``` javascript
+let [a, b, c] = [1, 2, 3];
+相当于 let a =1,b=2,c=3;
+```
+## 对象解构
+``` javascript
+const node = {
+  loc: {
+    start: {
+      line: 1,
+      column: 5
+    }
+  }
+};
+
+let { loc, loc: { start }, loc: { start: { line }} } = node;
+line // 1
+loc  // Object {start: Object}
+start // Object {line: 1, column: 5}
+```
+## 字符串解构
+``` javascript
+let [a,b,c,d,e]="hello";
+a // "h"
+b // "e"
+c // "l"
+d // "l"
+e // "o"
+```
+## 数值和布尔值解构
+``` javascript
+let {toString: s} = 123;
+s === Number.prototype.toString // true
+
+let {toString: s} = true;
+s === Boolean.prototype.toString // true
+```
+## 函数参数解构
+``` javascript
+function add([x, y]){
+  return x + y;
+}
+
+add([1, 2]); // 3
+```
