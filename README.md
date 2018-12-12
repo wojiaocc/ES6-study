@@ -16,6 +16,18 @@ Babel可以使用npm安装，在终端中转到该文件夹后执行下述指令
 $ npm install --save-dev babel-cli
 $ npm install --save-dev babel-preset-es2015
 ```
+**编译**
+输入 npm run build 进行编译。
 
 # let 
-ES5中，只存在全局作用域和函数作用域，由于 let的引入 
+ES5中，只存在全局作用域和函数作用域，由于 let的引入了块级作用域的概念。
+例子1：
+代码如下所示：
+``` javascript
+{
+    var a=1;
+    let b=2;
+}
+console.log(a);
+console.log(b);
+```

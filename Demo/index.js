@@ -1,7 +1,8 @@
-var a = [];
-for (let i = 0; i < 10; i++) {
-  a[i] = function () {
-    console.log(i);
-  };
+
+
+{
+  var a=5;
+  let b=10;
 }
-a[6]() // 10
+console.log(a);
+console.log(b);
